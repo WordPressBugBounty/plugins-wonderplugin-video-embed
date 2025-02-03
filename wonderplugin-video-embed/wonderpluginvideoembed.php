@@ -3,7 +3,7 @@
 Plugin Name: Wonder Video Embed 
 Plugin URI: https://www.wonderplugin.com/wordpress-video-player/
 Description: WordPress Video Embed Plugin & Widget
-Version: 2.0
+Version: 2.1
 Author: Magic Hills Pty Ltd
 Author URI: https://www.wonderplugin.com
 */
@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) )
 if ( defined( 'WONDERPLUGIN_VIDEOEMBED_VERSION' ) )
 	return;
 
-define('WONDERPLUGIN_VIDEOEMBED_VERSION', '2.0');
+define('WONDERPLUGIN_VIDEOEMBED_VERSION', '2.1');
 define('WONDERPLUGIN_VIDEOEMBED_URL', plugin_dir_url( __FILE__ ));
 define('WONDERPLUGIN_VIDEOEMBED_PATH', plugin_dir_path( __FILE__ ));
 define('WONDERPLUGIN_VIDEOEMBED_PLUGIN', basename(dirname(__FILE__)) . '/' . basename(__FILE__));
-define('WONDERPLUGIN_VIDEOEMBED_PLUGIN_VERSION', '2.0');
+define('WONDERPLUGIN_VIDEOEMBED_PLUGIN_VERSION', '2.1');
 
 require_once 'app/class-wonderplugin-videoembed-controller.php';
 

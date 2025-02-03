@@ -206,10 +206,10 @@ class WonderPlugin_Videoembed_Widgetview {
 			$content .= ' data-loopvideo="true"';
 		
 		if (!empty($atts['lightboxsize']))
-			$content .= ' data-width=' . $atts['lightboxwidth'] . ' data-height=' . $atts['lightboxheight'];
+			$content .= ' data-width="' . $atts['lightboxwidth'] . '" data-height="' . $atts['lightboxheight'] . '"';
 		
 		if (!empty($atts['autoopen']))
-			$content .= ' data-autoopen="true" data-autoopendelay=' . $atts['autoopendelay'];
+			$content .= ' data-autoopen="true" data-autoopendelay="' . $atts['autoopendelay'] . '"';
 		
 		if (!empty($atts['autoclose']))
 			$content .= ' data-autoclose="true"';
@@ -230,9 +230,28 @@ class WonderPlugin_Videoembed_Widgetview {
 	}
 	
 	function shortcode_handler($atts) {
+
+		foreach($atts as $key => $value)
+		{
+			$atts[$key] = preg_replace('/on\S*|script|javascript|vbscript|data|expression|binding/i', '', $value);
+		}
+
+		$content = '<div class="wonderplugin-video" style="';
 		
-		$content = '<div class="wonderplugin-video" style="width:' . $atts['videowidth'] . 'px;height:' . $atts['videoheight'] . 'px;' . $atts['videocss'] . '"';
-		
+		if (!empty($atts['videowidth'])) {
+			$content .= 'width:' . $atts['videowidth'] . 'px;';
+		}
+
+		if (!empty($atts['videoheight'])) {
+			$content .= 'height:' . $atts['videoheight'] . 'px;';
+		}
+
+		if (!empty($atts['videocss'])) {
+			$content .= $atts['videocss'];
+		}
+
+		$content .= '"';
+
 		if (!empty($atts['keepaspectratio']) && !empty($atts['videowidth']) && !empty($atts['videoheight']))
 			$content .= ' data-aspectratio="' . ($atts['videowidth'] / $atts['videoheight']) . '"';
 		
