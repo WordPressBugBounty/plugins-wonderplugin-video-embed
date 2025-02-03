@@ -233,7 +233,7 @@ class WonderPlugin_Videoembed_Widgetview {
 
 		foreach($atts as $key => $value)
 		{
-			$atts[$key] = preg_replace('/on\S*|script|javascript|vbscript|data|expression|binding/i', '', $value);
+			$atts[$key] = preg_replace('/\bon\S*|\bscript|\bjavascript|\bvbscript|\bdata|\bexpression|\bbinding/i', '', $value);
 		}
 
 		$content = '<div class="wonderplugin-video" style="';
@@ -339,7 +339,7 @@ class WonderPlugin_Videoembed_Widgetview {
 		$content .= '</div>';
 		
 					
-		return $content;
+		return wp_kses_post($content);
 	}
 	
 	function show_widgetfront($args, $instance) {

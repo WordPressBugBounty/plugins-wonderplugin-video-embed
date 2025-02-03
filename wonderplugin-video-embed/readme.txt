@@ -67,6 +67,12 @@ Please view the tutorial: [How to use the plugin in the Gutenberg editor](https:
 
 == Changelog ==
 
+= 2.3 =
+* Fix an issue when matching JavaScript keywords
+
+= 2.2 =
+* Sanitize HTML content before rendering
+
 = 2.1 =
 * Sanitize shortcode parameters
 

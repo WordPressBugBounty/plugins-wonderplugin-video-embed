@@ -1,7 +1,7 @@
 /** Wonderplugin Video Embed
  * Copyright 2025 Magic Hills Pty Ltd All Rights Reserved
  * Website: https://www.wonderplugin.com
- * Version 2.1 
+ * Version 2.3 
  */
 (function($){tinymce.PluginManager.add("wpve_mce_button",function(editor,url){editor.addButton("wpve_mce_button",{text:" Video",title:"Wonder Video Embed",icon:true,image:url+"/logo-72.png",onclick:function(){wpve_options_form(editor)}})});function get_url_arams(href){var result={};if(href.indexOf("?")<0)return result;var params=href.substring(href.indexOf("?")+1).split("&");for(var i=0;i<params.length;i++){var value=params[i].split("=");if(value&&value.length==2&&value[0].toLowerCase()!="v")result[value[0].toLowerCase()]=
 value[1]}return result}function escape_html(s){return s.replace(/"/g,'\\"').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function double_escape_html(s){return escape_html(s).replace(/&/g,"&amp;")}function wpve_options_form(editor){$(".wpve-mce-dialog").remove();var pluginbaseurl="";var helpurl="";var lightboxinstalled=false;if(WONDERPLUGIN_VIDEO_MCE_EDITOR){if(WONDERPLUGIN_VIDEO_MCE_EDITOR.pluginurl&&WONDERPLUGIN_VIDEO_MCE_EDITOR.pluginurl.length>0)pluginbaseurl=
