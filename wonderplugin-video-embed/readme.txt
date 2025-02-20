@@ -3,7 +3,7 @@ Contributors: wonderplugin
 Tags: video embed, video player, video widget, video lightbox, YouTube embed, YouTube player, YouTube widget, YouTube lightbox, Vimeo embed, Vimeo player, Vimeo widget, Vimeo lightbox, Wistia embed, Wistia player, Wistia widget, Wistia lightbox
 Donate link: https://www.wonderplugin.com/wordpress-video-player/
 Requires at least: 3.6
-Tested up to: 6.7.1
+Tested up to: 6.7.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,9 @@ Please view the tutorial: [How to use the plugin in the Gutenberg editor](https:
 == Screenshots ==
 
 == Changelog ==
+
+= 2.4 =
+* Fix an issue when embedding iframe videos
 
 = 2.3 =
 * Fix an issue when matching JavaScript keywords

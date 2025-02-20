@@ -339,9 +339,25 @@ class WonderPlugin_Videoembed_Widgetview {
 		$content .= '</div>';
 		
 					
-		return wp_kses_post($content);
+		return $this->wpve_wp_kses($content);
 	}
 	
+	function wpve_wp_kses($content) {
+
+		$allowed_tags = wp_kses_allowed_html('post'); 
+	
+		$allowed_tags['iframe'] = [
+			'class'			  => true,
+			'width'           => true,
+			'height'          => true,
+			'src'             => true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+		];
+	
+		return wp_kses($content, $allowed_tags);
+	}
+
 	function show_widgetfront($args, $instance) {
 		
 		$content = '[wonderplugin_video embedtype="widget"';
